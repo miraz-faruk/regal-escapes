@@ -3,8 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
 
     const navLinks = <>
-        <li><NavLink to={"/"}>Home</NavLink></li>
-        <li><NavLink to={"/update-profile"}>Update Profile</NavLink></li>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/update-profile">Update Profile</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -30,7 +30,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl text-[#0a1f44]">Regal <span className="text-[#d4af37]">Escapes</span></a>
+                <a className="btn btn-ghost text-3xl text-[#0a1f44]">Regal <span className="text-[#d4af37]">Escapes</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -45,7 +45,7 @@ const Navbar = () => {
                             src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
                     </div>
                 </div>
-                <Link>
+                <Link to="/login">
                     <button className="btn">Login</button>
                 </Link>
             </div>
