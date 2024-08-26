@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { toast, ToastContainer } from "react-toastify";
 
 
 const Register = () => {
 
     const { createUser } = useContext(AuthContext);
+
+    const [registerError, setRegisterError] = useState('');
 
     const handleRegister = e => {
         e.preventDefault();
@@ -18,13 +21,32 @@ const Register = () => {
         const password = form.get('password');
         console.log(name, email, photo, password);
 
+        // Password validation
+        if (!/(?=.*[A-Z])/.test(password)) {
+            toast.error('Password must contain at least one uppercase letter.');
+            return;
+        }
+        if (!/(?=.*[a-z])/.test(password)) {
+            toast.error('Password must contain at least one lowercase letter.');
+            return;
+        }
+        if (password.length < 6) {
+            toast.error('Password must be at least 6 characters long.');
+            return;
+        }
+
+        // reset error
+        setRegisterError('');
+
         // create user
         createUser(email, password)
             .then(result => {
-                console.log(result.user)
+                console.log(result.user);
+                toast.success('User created successfully');
             })
             .catch(error => {
-                console.error(error)
+                console.error(error);
+                toast.error(error.message)
             })
     }
 
@@ -32,7 +54,7 @@ const Register = () => {
         <div>
             <Navbar></Navbar>
             <div>
-                <h2 className="text-[#D6AD60] text-3xl text-center font-bold mt-4 lg:mt-8">Please Register Your Account</h2>
+                <h2 className="text-[#D6AD60] text-3xl text-center font-bold mt-2 lg:mt-4">Please Register Your Account</h2>
                 <form onSubmit={handleRegister} className="card-body w-full lg:w-1/3 mx-auto">
                     {/* Name */}
                     <div className="form-control">
@@ -68,6 +90,7 @@ const Register = () => {
                 </form>
                 <p className="text-center">Already have an account? Please <Link className="text-blue-600 font-medium" to="/login">Login</Link></p>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
