@@ -2,23 +2,19 @@ import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
-
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-
     const { createUser } = useContext(AuthContext);
-
     const [registerError, setRegisterError] = useState('');
 
-    const handleRegister = e => {
+    const handleRegister = (e) => {
         e.preventDefault();
-        console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
         const name = form.get('name');
         const email = form.get('email');
         const photo = form.get('photo');
         const password = form.get('password');
-        console.log(name, email, photo, password);
 
         // Password validation
         if (!/(?=.*[A-Z])/.test(password)) {
@@ -34,19 +30,29 @@ const Register = () => {
             return;
         }
 
-        // reset error
+        // Reset error
         setRegisterError('');
 
-        // create user
+        // Create user
         createUser(email, password)
             .then(result => {
-                console.log(result.user);
-                toast.success('User created successfully');
+                const user = result.user;
+
+                // Update the user profile with name and photo URL
+                updateProfile(user, {
+                    displayName: name,
+                    photoURL: photo
+                }).then(() => {
+                    toast.success('User created account successfully!');
+                }).catch((error) => {
+                    console.error(error);
+                    toast.error('Profile update failed. Please try again');
+                });
             })
             .catch(error => {
                 console.error(error);
-                toast.error(error.message)
-            })
+                toast.error(error.message);
+            });
     }
 
     return (
@@ -88,7 +94,7 @@ const Register = () => {
                 </form>
                 <p className="text-center mb-4">Already have an account? Please <Link className="text-blue-600 font-medium" to="/login">Login</Link></p>
             </div>
-            <ToastContainer></ToastContainer>
+            <ToastContainer />
         </div>
     );
 };
