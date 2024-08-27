@@ -9,8 +9,6 @@ import PrivateRoutes from "./PrivateRoutes";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import UserProfile from "../pages/UserProfile/UserProfile";
 
-
-
 const router = createBrowserRouter([
     {
         path: '/',

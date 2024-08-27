@@ -3,18 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
-
-    const { user, logOut } = useContext(AuthContext);
-
-    const handleSignOut = () => {
-        logOut()
-            .then(result => {
-                console.log(result.user);
-            })
-            .catch(error => {
-                console.error(error);
-            })
-    }
+    const { user, loading, logOut } = useContext(AuthContext);
 
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
@@ -23,6 +12,25 @@ const Navbar = () => {
         <li><NavLink to="/update-profile">Update Profile</NavLink></li>
         <li><NavLink to="/user-profile">User Profile</NavLink></li>
     </>
+
+    // Handle sign-out
+    const handleSignOut = () => {
+        logOut()
+            .then(() => {
+                console.log("User signed out");
+            })
+            .catch(error => {
+                console.error("Sign out error:", error);
+            });
+    };
+
+    // Placeholder while loading
+    if (loading) {
+        return (
+            <h2>Loading...</h2>
+        );
+    }
+
     return (
         <div className="navbar bg-base-200">
             <div className="navbar-start">
@@ -55,16 +63,19 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mr-2">
-                    <div className="w-10 rounded-full">
-                        <img
-                            alt="Tailwind CSS Navbar component"
-                            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                    </div>
-                </div>
                 {
                     user ?
-                        <button onClick={handleSignOut} className="btn bg-[#BD9E24] text-[#00308E] font-bold">Sign Out</button>
+                        <div className="flex flex-row-reverse">
+                            <button onClick={handleSignOut} className="btn bg-[#BD9E24] text-[#00308E] font-bold">Sign Out</button>
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mr-2 tooltip tooltip-left flex justify-center" data-tip={user.displayName || "User"}>
+                                <div className="w-10 rounded-full">
+                                    <img
+                                        alt={user.displayName || "User Avatar"}
+                                        src={user.photoURL || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"}
+                                    />
+                                </div>
+                            </div>
+                        </div>
                         :
                         <Link to="/login">
                             <button className="btn bg-[#BD9E24] text-[#00308E] font-bold">Login</button>

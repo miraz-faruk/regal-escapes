@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
 
     const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     // Login with email and password
     const handleLogin = e => {
@@ -18,7 +19,10 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result.user);
-                toast.success('Login successful!');
+                toast('Login successful');
+                setTimeout(() => {
+                    navigate('/');
+                }, 5000);
             })
             .catch(error => {
                 console.error(error);
@@ -32,6 +36,9 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 toast.success('Google login successful!');
+                setTimeout(() => {
+                    navigate('/');
+                }, 5000);
             })
             .catch(error => {
                 console.error(error);
@@ -57,7 +64,7 @@ const Login = () => {
 
     return (
         <div>
-            <div>
+            <div className="mb-5">
                 <h2 className="text-[#D6AD60] text-3xl text-center font-bold mt-4 lg:mt-8">Please Login Your Account</h2>
                 <form onSubmit={handleLogin} className="card-body w-full lg:w-1/3 mx-auto">
                     <div className="form-control">

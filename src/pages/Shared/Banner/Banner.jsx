@@ -10,22 +10,22 @@ import img3 from '../../../assets/images/umbrella-chair-around-swimming-pool.jpg
 
 const Banner = () => {
     return (
-        <Swiper className='max-h-screen'
-        // install Swiper modules
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        // spaceBetween={50}
-        // slidesPerView={3}
-        navigation
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
-      >
-        <SwiperSlide><img className='w-full' src={img1} alt="" /></SwiperSlide>
-        <SwiperSlide><img className='w-full' src={img1} alt="" /></SwiperSlide>
-        <SwiperSlide><img className='w-full' src={img1} alt="" /></SwiperSlide>
-        <SwiperSlide><img className='w-full' src={img1} alt="" /></SwiperSlide>
-      </Swiper>
+        <Swiper className='max-h-screen mt-20'
+            // install Swiper modules
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            // spaceBetween={50}
+            // slidesPerView={3}
+            navigation
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+            onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={() => console.log('slide change')}
+        >
+            <SwiperSlide><img className='w-full' src={img1} alt="" /></SwiperSlide>
+            <SwiperSlide><img className='w-full' src={img1} alt="" /></SwiperSlide>
+            <SwiperSlide><img className='w-full' src={img1} alt="" /></SwiperSlide>
+            <SwiperSlide><img className='w-full' src={img1} alt="" /></SwiperSlide>
+        </Swiper>
     );
 };
 

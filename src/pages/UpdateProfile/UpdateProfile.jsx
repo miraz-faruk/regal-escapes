@@ -5,11 +5,9 @@ import { toast, ToastContainer } from "react-toastify";
 
 const UpdateProfile = () => {
     const { user } = useContext(AuthContext);
-
     const [name, setName] = useState("");
     const [photoURL, setPhotoURL] = useState("");
 
-    // Load user information
     useEffect(() => {
         if (user) {
             setName(user.displayName || "");
@@ -20,9 +18,7 @@ const UpdateProfile = () => {
     const handleProfileUpdate = e => {
         e.preventDefault();
 
-        // check
-        console.log('Updated information', { displayName: name, photoURL: photoURL });
-
+        // Update user profile
         updateProfile(user, {
             displayName: name,
             photoURL: photoURL
@@ -31,7 +27,8 @@ const UpdateProfile = () => {
                 toast.success("Profile updated successfully!");
             })
             .catch((error) => {
-                toast.error(error, "Failed to update profile. Please try again.");
+                console.error("Error updating profile:", error);
+                toast.error("Failed to update profile. Please try again.");
             });
     };
 
@@ -41,22 +38,19 @@ const UpdateProfile = () => {
             <form onSubmit={handleProfileUpdate} className="space-y-4">
                 <div>
                     <label className="block text-sm font-medium text-gray-700">Name</label>
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="input input-bordered w-full" required
-                    />
+                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="input input-bordered w-full" required />
                 </div>
                 <div>
                     <label className="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email" value={user?.email || ""} className="input input-bordered w-full" disabled
-                    />
+                    <input type="email" value={user?.email || ""} className="input input-bordered w-full" disabled />
                 </div>
                 <div>
                     <label className="block text-sm font-medium text-gray-700">Photo URL</label>
-                    <input type="text" value={photoURL} onChange={(e) => setPhotoURL(e.target.value)} className="input input-bordered w-full" required
-                    />
+                    <input type="text" value={photoURL} onChange={(e) => setPhotoURL(e.target.value)} className="input input-bordered w-full" required />
                 </div>
                 <button type="submit" className="btn btn-primary">Save Changes</button>
             </form>
-            <ToastContainer></ToastContainer>
+            <ToastContainer />
         </div>
     );
 };

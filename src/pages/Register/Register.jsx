@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
@@ -7,6 +7,7 @@ import { updateProfile } from "firebase/auth";
 const Register = () => {
     const { createUser } = useContext(AuthContext);
     const [registerError, setRegisterError] = useState('');
+    const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -15,6 +16,7 @@ const Register = () => {
         const email = form.get('email');
         const photo = form.get('photo');
         const password = form.get('password');
+        // console.log(name, email, photo, password);
 
         // Password validation
         if (!/(?=.*[A-Z])/.test(password)) {
@@ -44,6 +46,9 @@ const Register = () => {
                     photoURL: photo
                 }).then(() => {
                     toast.success('User created account successfully!');
+                    setTimeout(() => {
+                        navigate('/');
+                    }, 5000);
                 }).catch((error) => {
                     console.error(error);
                     toast.error('Profile update failed. Please try again');

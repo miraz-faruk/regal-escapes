@@ -10,45 +10,47 @@ const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
-
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
-    }
+    };
 
     const signIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
-    }
+    };
 
     const signInWithGoogle = () => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
-    }
+    };
 
     const signInWithGithub = () => {
         setLoading(true);
         return signInWithPopup(auth, githubProvider);
-    }
+    };
 
     const logOut = () => {
         setLoading(true);
         return signOut(auth);
-    }
+    };
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            console.log('user in the auth state change', currentUser);
             setUser(currentUser);
+            console.log("Auth state changed:", currentUser); // Debug log
             setLoading(false);
         });
+
+        // Clean up subscription on component unmount
         return () => {
+            console.log("Unsubscribing auth state listener");
             unSubscribe();
-        }
-    }, [])
+        };
+    }, []);
 
     const authInfo = {
         user,
@@ -58,7 +60,7 @@ const AuthProvider = ({ children }) => {
         signInWithGoogle,
         signInWithGithub,
         logOut,
-    }
+    };
 
     return (
         <AuthContext.Provider value={authInfo}>
