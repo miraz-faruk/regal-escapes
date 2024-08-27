@@ -18,10 +18,12 @@ const Navbar = () => {
 
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/about-us">About Us</NavLink></li>
+        <li><NavLink to="/services">Services</NavLink></li>
         <li><NavLink to="/update-profile">Update Profile</NavLink></li>
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-200">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,7 +46,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-3xl text-[#0a1f44]">Regal <span className="text-[#d4af37]">Escapes</span></a>
+                <a className="btn btn-ghost text-3xl text-[#00308E] p-0">Regal <span className="text-[#d4af37]">Escapes</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -52,7 +54,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mr-2">
                     <div className="w-10 rounded-full">
                         <img
                             alt="Tailwind CSS Navbar component"
@@ -61,10 +63,10 @@ const Navbar = () => {
                 </div>
                 {
                     user ?
-                        <button onClick={handleSignOut} className="btn">Sign Out</button>
+                        <button onClick={handleSignOut} className="btn bg-[#BD9E24] text-[#00308E] font-bold">Sign Out</button>
                         :
                         <Link to="/login">
-                            <button className="btn">Login</button>
+                            <button className="btn bg-[#BD9E24] text-[#00308E] font-bold">Login</button>
                         </Link>
                 }
             </div>

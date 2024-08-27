@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Navbar from "../Shared/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
@@ -58,7 +57,6 @@ const Login = () => {
 
     return (
         <div>
-            <Navbar></Navbar>
             <div>
                 <h2 className="text-[#D6AD60] text-3xl text-center font-bold mt-4 lg:mt-8">Please Login Your Account</h2>
                 <form onSubmit={handleLogin} className="card-body w-full lg:w-1/3 mx-auto">

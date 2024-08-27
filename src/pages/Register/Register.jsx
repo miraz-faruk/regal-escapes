@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Navbar from "../Shared/Navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
@@ -52,7 +51,6 @@ const Register = () => {
 
     return (
         <div>
-            <Navbar></Navbar>
             <div>
                 <h2 className="text-[#D6AD60] text-3xl text-center font-bold mt-2 lg:mt-4">Please Register Your Account</h2>
                 <form onSubmit={handleRegister} className="card-body w-full lg:w-1/3 mx-auto">
@@ -88,7 +86,7 @@ const Register = () => {
                         <button className="btn btn-primary">Register</button>
                     </div>
                 </form>
-                <p className="text-center">Already have an account? Please <Link className="text-blue-600 font-medium" to="/login">Login</Link></p>
+                <p className="text-center mb-4">Already have an account? Please <Link className="text-blue-600 font-medium" to="/login">Login</Link></p>
             </div>
             <ToastContainer></ToastContainer>
         </div>

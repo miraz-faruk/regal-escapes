@@ -1,0 +1,67 @@
+[
+    {
+        "id": "1",
+        "estate_title": "Luxury Villa",
+        "segment_name": "Residential",
+        "description": "A beautiful luxury villa with a private swimming pool and modern amenities.",
+        "price": "$2,500,000",
+        "status": "sale",
+        "area": "3500 sq ft",
+        "location": "Beverly Hills, CA",
+        "facilities": [
+            "living room",
+            "swimming pool",
+            "Kitchen"
+        ],
+        "image": "https://example.com/luxury-villa.jpg"
+    },
+    {
+        "id": "2",
+        "estate_title": "Modern Apartment",
+        "segment_name": "Residential",
+        "description": "A sleek and modern apartment located in the heart of the city.",
+        "price": "$750,000",
+        "status": "rent",
+        "area": "1200 sq ft",
+        "location": "New York, NY",
+        "facilities": [
+            "living room",
+            "gym",
+            "Kitchen"
+        ],
+        "image": "https://example.com/modern-apartment.jpg"
+    },
+    {
+        "id": "3",
+        "estate_title": "Beachfront Property",
+        "segment_name": "Residential",
+        "description": "An exquisite beachfront property with stunning ocean views.",
+        "price": "$4,000,000",
+        "status": "sale",
+        "area": "5000 sq ft",
+        "location": "Malibu, CA",
+        "facilities": [
+            "living room",
+            "swimming pool",
+            "Kitchen",
+            "Beach access"
+        ],
+        "image": "https://example.com/beachfront-property.jpg"
+    },
+    {
+        "id": "4",
+        "estate_title": "Country House",
+        "segment_name": "Residential",
+        "description": "A charming country house with ample land and peaceful surroundings.",
+        "price": "$1,200,000",
+        "status": "rent",
+        "area": "2500 sq ft",
+        "location": "Napa Valley, CA",
+        "facilities": [
+            "living room",
+            "garden",
+            "Kitchen"
+        ],
+        "image": "https://example.com/country-house.jpg"
+    }
+]
