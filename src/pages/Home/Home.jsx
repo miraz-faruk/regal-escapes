@@ -1,4 +1,4 @@
-import Banner from "../Shared/Banner/Banner";
+import Slider from "../Shared/Slider/Slider";
 import Constructions from "../Shared/Constructions/Constructions";
 import Estates from "../Shared/Estates/Estates";
 import Gallery from "../Shared/Gallery/Gallery";
@@ -7,7 +7,7 @@ import Gallery from "../Shared/Gallery/Gallery";
 const Home = () => {
     return (
         <div>
-            <Banner></Banner>
+            <Slider></Slider>
             <Estates></Estates>
             <Constructions></Constructions>
             <Gallery></Gallery>

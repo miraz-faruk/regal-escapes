@@ -1,67 +1,104 @@
 [
     {
         "id": "1",
-        "estate_title": "Luxury Villa",
-        "segment_name": "Residential",
-        "description": "A beautiful luxury villa with a private swimming pool and modern amenities.",
-        "price": "$2,500,000",
-        "status": "sale",
-        "area": "3500 sq ft",
-        "location": "Beverly Hills, CA",
+        "estate_title": "Luxury Penthouse",
+        "segment_name": "Luxury",
+        "description": "A stunning penthouse with panoramic city views, private rooftop, and a personal elevator.",
+        "price": "$ 8,500,000",
+        "status": "Sale",
+        "area": "4500 sq ft",
+        "location": "Manhattan, NY",
         "facilities": [
-            "living room",
-            "swimming pool",
-            "Kitchen"
+            "Rooftop terrace",
+            "Private elevator",
+            "Gym",
+            "Infinity pool"
         ],
-        "image": "https://example.com/luxury-villa.jpg"
+        "image": "https://i.ibb.co/4fsJ3QZ/modern-lounge-room-interior-office-building.jpg"
     },
     {
         "id": "2",
-        "estate_title": "Modern Apartment",
-        "segment_name": "Residential",
-        "description": "A sleek and modern apartment located in the heart of the city.",
-        "price": "$750,000",
-        "status": "rent",
-        "area": "1200 sq ft",
-        "location": "New York, NY",
+        "estate_title": "Beachfront Resort",
+        "segment_name": "Luxury",
+        "description": "An exclusive beachfront resort with luxury suites, spa, and fine dining.",
+        "price": "$ 120,000 per month",
+        "status": "Rent",
+        "area": "50,000 sq ft",
+        "location": "Maui, HI",
         "facilities": [
-            "living room",
-            "gym",
-            "Kitchen"
+            "Spa",
+            "Private beach access",
+            "Fine dining restaurants",
+            "Infinity pool"
         ],
-        "image": "https://example.com/modern-apartment.jpg"
+        "image": "https://i.ibb.co/F82YJC8/seaside-sand-landscape-island-ocean.jpg"
     },
     {
         "id": "3",
-        "estate_title": "Beachfront Property",
-        "segment_name": "Residential",
-        "description": "An exquisite beachfront property with stunning ocean views.",
-        "price": "$4,000,000",
-        "status": "sale",
-        "area": "5000 sq ft",
-        "location": "Malibu, CA",
+        "estate_title": "Private Island",
+        "segment_name": "Luxury",
+        "description": "A secluded private island with luxury villas, a marina, and pristine beaches.",
+        "price": "$ 45,000,000",
+        "status": "Sale",
+        "area": "150 acres",
+        "location": "Bahamas",
         "facilities": [
-            "living room",
-            "swimming pool",
-            "Kitchen",
-            "Beach access"
+            "Luxury villas",
+            "Marina",
+            "Private beaches",
+            "Helipad"
         ],
-        "image": "https://example.com/beachfront-property.jpg"
+        "image": "https://i.ibb.co/sH2Xn2P/jessica-kantak-bailey-6u-S8-A3z-Thdk-unsplash.jpg"
     },
     {
         "id": "4",
-        "estate_title": "Country House",
-        "segment_name": "Residential",
-        "description": "A charming country house with ample land and peaceful surroundings.",
-        "price": "$1,200,000",
-        "status": "rent",
-        "area": "2500 sq ft",
-        "location": "Napa Valley, CA",
+        "estate_title": "Modern Villa",
+        "segment_name": "Luxury",
+        "description": "A contemporary villa with state-of-the-art technology, an infinity pool, and home theater.",
+        "price": "$ 35,000 per month",
+        "status": "Rent",
+        "area": "6000 sq ft",
+        "location": "Los Angeles, CA",
         "facilities": [
-            "living room",
-            "garden",
-            "Kitchen"
+            "Infinity pool",
+            "Home theater",
+            "Smart home system",
+            "Private gym"
         ],
-        "image": "https://example.com/country-house.jpg"
+        "image": "https://i.ibb.co/0JpdDLH/frames-for-your-heart-2d4l-AQAlb-DA-unsplash.jpg"
+    },
+    {
+        "id": "5",
+        "estate_title": "Luxury Mansion",
+        "segment_name": "Luxury",
+        "description": "A grand mansion with expansive gardens, multiple guest houses, and a private cinema.",
+        "price": "$ 30,000,000",
+        "status": "Sale",
+        "area": "20,000 sq ft",
+        "location": "Beverly Hills, CA",
+        "facilities": [
+            "Guest houses",
+            "Private cinema",
+            "Tennis court",
+            "Wine cellar"
+        ],
+        "image": "https://i.ibb.co/pJv82Qc/walter-sturn-fol-Cc8-Q8k-unsplash.jpg"
+    },
+    {
+        "id": "6",
+        "estate_title": "Oceanfront Estate",
+        "segment_name": "Luxury",
+        "description": "An oceanfront estate with panoramic views, private beach, and an outdoor entertainment area.",
+        "price": "$ 50,000 per month",
+        "status": "Rent",
+        "area": "8000 sq ft",
+        "location": "Malibu, CA",
+        "facilities": [
+            "Private beach",
+            "Infinity pool",
+            "Outdoor entertainment area",
+            "Spa"
+        ],
+        "image": "https://i.ibb.co/3BCZvt6/luxury-house-hibiscus-island-downtown-miami-florida.jpg"
     }
 ]
