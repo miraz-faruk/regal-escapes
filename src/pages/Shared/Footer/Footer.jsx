@@ -2,14 +2,16 @@ import footerImage from '../../../assets/images/footer-image.jpg'
 
 const Footer = () => {
     return (
-        <div className="bg-cover bg-center"
+        <div className="relative bg-cover bg-center"
             style={{ backgroundImage: `url(${footerImage})` }}>
-            <footer className="text-white">
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black opacity-30"></div>
+            <footer className="relative text-white">
                 <div className="container mx-auto py-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                         {/* Company Info */}
-                        <div>
-                            <h5 className="text-3xl font-extrabold mb-2">Regal Escapes</h5>
+                        <div className='flex items-center'>
+                            <h5 className="text-4xl font-extrabold mb-2 text-[#d4af44]">Regal Escapes</h5>
                         </div>
                         {/* Links */}
                         <div>
@@ -23,7 +25,7 @@ const Footer = () => {
                             </ul>
                         </div>
                         {/* Contact Info */}
-                        <div>
+                        <div className='space-y-1'>
                             <h5 className="text-lg font-bold mb-2">Contact Us</h5>
                             <p className="text-sm">Email: contact@regalescapes.com</p>
                             <p className="text-sm">Phone: +123-456-7890</p>
@@ -32,11 +34,10 @@ const Footer = () => {
                         {/* Social Media */}
                         <div>
                             <h5 className="text-lg font-bold mb-2">Follow Us</h5>
-                            <div className="flex space-x-4">
-                                <a href="#" className="hover:underline"><i className="fab fa-facebook-f"></i> Facebook</a>
-                                <a href="#" className="hover:underline"><i className="fab fa-instagram"></i> Instagram</a>
-                                <a href="#" className="hover:underline"><i className="fab fa-twitter"></i> Twitter</a>
-                                <a href="#" className="hover:underline"><i className="fab fa-linkedin"></i> LinkedIn</a>
+                            <div className='flex gap-4'>
+                                <a href=""><img className='w-10' src={`https://i.ibb.co/WvFGbJd/facebook.png`} alt="" /></a>
+                                <a href=""><img className='w-10' src={`https://i.ibb.co/JnfJp4x/instagram.png`} alt="" /></a>
+                                <a href=""><img className='w-10' src={`https://i.ibb.co/TYtG3hW/twitter.png`} alt="" /></a>
                             </div>
                         </div>
                     </div>
