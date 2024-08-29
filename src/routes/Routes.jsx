@@ -3,7 +3,7 @@ import Root from "../layouts/Root";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
-import AboutUs from "../pages/AboutUs/AboutUs";
+// import AboutUs from "../pages/AboutUs/AboutUs";
 import Services from "../pages/Services/Services";
 import PrivateRoutes from "./PrivateRoutes";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
@@ -26,20 +26,20 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>
             },
-            {
-                path: '/about-us',
-                element: <AboutUs></AboutUs>
-            },
+            // {
+            //     path: '/about-us',
+            //     element: <AboutUs></AboutUs>
+            // },
             {
                 path: '/services',
-                element: <Services></Services>
+                element: <PrivateRoutes><Services></Services></PrivateRoutes>
             },
             {
                 path: '/update-profile',
                 element: <PrivateRoutes><UpdateProfile></UpdateProfile></PrivateRoutes>
             },
             {
-                path: '/estate-details',
+                path: '/estate-details/:id',  // Add dynamic id parameter
                 element: <PrivateRoutes><EstateDetails></EstateDetails></PrivateRoutes>
             }
         ]
