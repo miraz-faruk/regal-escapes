@@ -26,6 +26,7 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>
             },
+            // commented this router for showing 404 error
             // {
             //     path: '/about-us',
             //     element: <AboutUs></AboutUs>

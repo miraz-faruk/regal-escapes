@@ -41,11 +41,10 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
-            console.log("Auth state changed:", currentUser); // Debug log
+            console.log("Auth state changed:", currentUser);
             setLoading(false);
         });
 
-        // Clean up subscription on component unmount
         return () => {
             console.log("Unsubscribing auth state listener");
             unSubscribe();

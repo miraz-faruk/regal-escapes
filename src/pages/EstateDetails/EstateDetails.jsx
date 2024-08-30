@@ -12,7 +12,6 @@ const EstateDetails = () => {
 
     return (
         <div className="container mx-auto mt-10">
-            {/* Full Height Banner Image */}
             <div className="relative w-full h-auto">
                 <img
                     src={image}

@@ -18,6 +18,7 @@ const Register = () => {
         const email = form.get('email');
         const photo = form.get('photo');
         const password = form.get('password');
+        console.log(registerError);
 
         // Password validation
         if (!/(?=.*[A-Z])/.test(password)) {

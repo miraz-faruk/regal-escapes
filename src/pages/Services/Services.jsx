@@ -5,9 +5,9 @@ import 'aos/dist/aos.css';
 const Services = () => {
     useEffect(() => {
         AOS.init({
-            duration: 1200, // Duration of animations in ms
-            easing: 'ease-in-out', // Easing function
-            once: true, // Whether animation should happen only once
+            duration: 1200, 
+            easing: 'ease-in-out', 
+            once: true,
         });
     }, []);
 
