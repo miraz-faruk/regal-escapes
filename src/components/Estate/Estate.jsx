@@ -12,7 +12,7 @@ const Estate = ({ estate }) => {
 
     return (
         <div>
-            <div className="card card-compact bg-base-100 w-96 shadow-2xl">
+            <div className="card card-compact bg-base-100 w-auto lg:w-96 shadow-2xl mx-3">
                 <figure>
                     <img src={image} alt={estate_title} />
                 </figure>

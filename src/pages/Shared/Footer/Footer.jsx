@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="absolute inset-0 bg-black opacity-30"></div>
             <footer className="relative text-white">
                 <div className="container mx-auto py-10">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mx-5">
                         {/* Company Info */}
                         <div className='flex items-center'>
                             <h5 className="text-4xl font-extrabold mb-2 text-[#d4af44]">Regal Escapes</h5>

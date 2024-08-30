@@ -19,7 +19,7 @@ const EstateDetails = () => {
                     alt={estate_title}
                     className="w-full max-h-screen object-cover"
                 />
-                <h1 className="absolute top-5 bg-black bg-opacity-10 px-2 py-1 rounded left-1/2 transform -translate-x-1/2 text-5xl text-white font-bold">
+                <h1 className="absolute top-5 bg-black bg-opacity-10 px-2 py-1 rounded left-1/2 transform -translate-x-1/2 text-lg lg:text-5xl text-white font-bold">
                     {estate_title}
                 </h1>
             </div>
@@ -28,7 +28,7 @@ const EstateDetails = () => {
             <div className="card card-compact bg-base-100 w-full shadow-2xl mt-6">
                 <div className="card-body bg-base-200">
                     <p className='text-lg'>{description}</p>
-                    <div className="flex gap-4 items-center mb-2">
+                    <div className="flex gap-4 mb-2">
                         <div className="font-bold space-y-1">
                             <p>ID:</p>
                             <p>Segment:</p>

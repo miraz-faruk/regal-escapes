@@ -14,7 +14,7 @@ const Services = () => {
     return (
         <div className="my-5">
             <h2 className="text-4xl font-bold text-center text-[#00308E] mb-5" data-aos="fade-up">Services of Regal Escapes</h2>
-            <div className="grid grid-cols-2 gap-5 mx-5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mx-5">
                 <div className="card bg-base-200 shadow-xl" data-aos="fade-right">
                     <div className="card-body">
                         <h2 className="text-2xl font-bold text-center text-[#d4af37]">Property Sales</h2>
