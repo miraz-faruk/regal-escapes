@@ -8,7 +8,7 @@ const Estates = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('/public/estates.json')
+        fetch('/estates.json')
             .then(res => res.json())
             .then(data => setEstates(data))
     }, []);
